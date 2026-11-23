@@ -14,3 +14,10 @@
 .reset-view-button:disabled{opacity:.5;cursor:default}
 @media(max-width:600px){.explorer-footer{align-items:flex-start;gap:8px}.reset-view-button{min-height:36px}}
 @media(max-width:600px){.section-nav a,.explorer-controls label,.explorer-controls select,.timeline output,.play-button{font-size:14px}.surface-status{font-size:12px}}
+
+/* SVD reconstruction comparison. */
+.hero h1{font-size:clamp(36px,4.7vw,59px)}
+.hero .byline{margin-bottom:0}
+.method-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-block:1px solid var(--line);padding:26px 0;margin:32px 0}
+.method-strip p{font-size:16px;margin:9px 0 0}
+@media(max-width:600px){.hero h1{font-size:37px}.method-strip{grid-template-columns:1fr;gap:20px}}
