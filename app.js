@@ -153,7 +153,7 @@
           yaxis: {title: {text: 'Key channel'}, range: [0, K - 1], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           zaxis: {title: {text: signed ? 'Signed state' : '|State|'}, range: [lower, bound], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           aspectmode: 'manual', aspectratio: {x: 1, y: 1, z: 0.7},
-          dragmode: 'orbit', uirevision: `measured-state-camera-${cameraRevision}`,
+          dragmode: 'turntable', uirevision: `measured-state-camera-${cameraRevision}`,
         },
       },
     };
@@ -169,7 +169,7 @@
         const content = surface();
         const config = {responsive: true, displaylogo: false,
           scrollZoom: window.matchMedia('(pointer: fine)').matches,
-          modeBarButtonsToRemove: ['toImage', 'resetCameraDefault3d', 'resetCameraLastSave3d'],
+          modeBarButtonsToRemove: ['toImage', 'orbitRotation', 'resetCameraDefault3d', 'resetCameraLastSave3d'],
           doubleClick: false,
         };
         if (!plot.data) {
