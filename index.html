@@ -23,8 +23,8 @@
 <div class="hero-actions">
 <a class="pill primary" href="#explorer"><span aria-hidden="true">▧</span> Explore in 3D</a>
 <a class="pill" href="https://github.com/aiden041108/pre-experiment-urp">GitHub</a>
-<a class="pill" download="" href="downloads/qwen_recurrent_state_gpu_3d.ipynb">Colab notebook</a>
-<a class="pill" href="#data">Data &amp; validation</a>
+
+
 </div>
 </header>
 <nav aria-label="Sections" class="section-nav"><div>
@@ -106,19 +106,7 @@
 <div class="reading-width subsection"><h3>The next question</h3><p class="research-question">Which updates reinforce a dominant direction—and which disperse it?</p><p>Track keys, values, gates, and write corrections; measure alignment with singular directions. Then repeat across independent documents and evaluate quantization with recurrent feedback and model-quality metrics.</p></div>
 <div class="takeaway closing"><span class="small-label">What this study establishes</span><p>There is a concrete structural phenomenon worth explaining in a real pretrained model. <strong>Its formation mechanism remains an open question.</strong></p></div>
 </div></section>
-<section class="section data-section" id="data"><div class="reading-width"><p class="section-kicker">Data &amp; reproducibility</p><h2>Inspect the evidence.</h2>
-<p>Explore the full data, rerun the notebook, or inspect the numerical checks. The supplied replay and prefix validation checks passed.</p></div>
-<div class="resource-list">
-<a href="https://github.com/aiden041108/pre-experiment-urp/releases/download/v1.0.0/recurrent_state_trajectory.npz"><span>Full trajectory</span><span>NPZ · all 1,536 FP32 states · ~91 MiB</span></a>
-<a download="" href="downloads/qwen_recurrent_state_gpu_3d.ipynb"><span>Colab notebook</span><span>Collection, checks, export &amp; interactive view</span></a>
-<a download="" href="downloads/state_metrics.csv"><span>State metrics</span><span>CSV · singular energy, RMS ratios &amp; IPR</span></a>
-<a download="" href="downloads/static_quantization.csv"><span>Quantization results</span><span>CSV · 8-bit &amp; 4-bit reconstruction errors</span></a>
-<a download="" href="downloads/validation_report.json"><span>Validation report</span><span>JSON · comparisons, tolerances &amp; coverage</span></a>
-<a download="" href="downloads/run_metadata.json"><span>Run metadata</span><span>Model revision, precision &amp; memory measurements</span></a>
-<a download="" href="assets/numeric_audit.json"><span>Data audit</span><span>Recomputed checks &amp; quantizer diagnostic</span></a>
-</div><details><summary>Run details, performance &amp; validation</summary><div class="details-body"><p>The page uses the supplied 256-token run with FP16 weights and native FP32 state. Collection took <strong>15.73 s</strong> on a Tesla T4; peak allocated GPU memory was <strong>1.624 GiB</strong>. The trajectory occupies <strong>96 MiB</strong> uncompressed. Timing includes probing and CPU copies, so it is not a standard inference-throughput benchmark.</p><p>The supplied validation report marks independent one-token replay, fresh-prefix comparisons, and segmented-prefix comparisons as passed. Replay covers the first 32 tokens; prefix checks cover 1, 8, 32, and 256. These are numerical consistency checks with stated tolerances, not proof of model accuracy.</p></div></details>
-<details><summary>Model implementation &amp; references</summary><div class="details-body"><ul><li><a href="https://huggingface.co/Qwen/Qwen3.5-0.8B">Qwen3.5-0.8B model</a> · revision <code>2fc06364715b967f1860aea9cf38778875588b17</code></li><li><a href="https://github.com/huggingface/transformers/blob/v5.24.0/src/transformers/models/qwen3_5/modeling_qwen3_5.py">Transformers 5.24.0 · Qwen3.5 implementation</a></li><li><a href="https://github.com/huggingface/transformers/blob/v5.24.0/src/transformers/cache_utils.py">Transformers 5.24.0 · cache implementation</a></li><li><a href="https://leapquant.github.io/">LeapQuant</a> · research motivation and visual-style reference</li></ul><p>All displayed experimental figures are regenerated from the supplied run. The 3D browser data are lossless little-endian FP32 copies, split by layer/head for on-demand loading. The web page is an original implementation.</p></div></details>
-</section>
+
 </main>
-<footer><a class="footer-brand" href="#">Pre-Experiment URP</a><p>Inside the Recurrent State · An exploratory study</p><p><a href="https://github.com/aiden041108/pre-experiment-urp">Source &amp; data</a><span>·</span><a href="https://github.com/aiden041108">aiden041108</a></p></footer>
+<footer><a class="footer-brand" href="#">Pre-Experiment URP</a><p>Inside the Recurrent State · An exploratory study</p><p><a href="https://github.com/aiden041108/pre-experiment-urp">GitHub</a><span>·</span><a href="https://github.com/aiden041108">aiden041108</a></p></footer>
 </body></html>
