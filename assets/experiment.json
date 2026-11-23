@@ -815,7 +815,7 @@
   ],
   "snapshots": 1536,
   "analysis_snapshots": 24,
-  "capture": "Every token recorded after processing: 256 actual time steps. SVD/quantization diagnostics use four checkpoints. No interpolation or synthetic frames.",
+  "capture": "Every token recorded after processing: 256 actual time steps. Temporal SVD diagnostics use every token for head 0; original checkpoint and quantization diagnostics use four checkpoints. No synthetic frames.",
   "metadata": {
     "schema_version": 1,
     "experiment": "Actual per-token recurrent state trajectory",
@@ -2820,5 +2820,10 @@
       0.8947048187255859
     ]
   ],
-  "global_max_abs": 1.2462646961212158
+  "global_max_abs": 1.2462646961212158,
+  "temporal_diagnostics_file": "temporal_metrics.json",
+  "temporal_analysis_snapshots": 768,
+  "temporal_head_ids": [
+    0
+  ]
 }

@@ -67,10 +67,39 @@
     eye: {x: 1.5, y: 1.5, z: 1.15}, center: {x: 0, y: 0, z: 0},
     up: {x: 0, y: 0, z: 1}, projection: {type: 'perspective'},
   });
-  let camera = defaultCamera(), cameraRevision = 0;
+  let camera = defaultCamera(), cameraRevision = 0, resetRequested = false;
+  let dragmode = 'turntable';
   const copyCamera = value => JSON.parse(JSON.stringify(value));
   function rememberCamera(event) {
     if (event['scene.camera']) camera = copyCamera(event['scene.camera']);
+  }
+  function rememberLiveView() {
+    const scene = plot._fullLayout?.scene?._scene;
+    // The last relayout event can precede the final drag/zoom position.
+    if (scene) camera = copyCamera(scene.getCamera());
+    dragmode = plot.layout?.scene?.dragmode || dragmode;
+  }
+  function stabilizeTurntable() {
+    const scene = plot._fullLayout?.scene?._scene;
+    if (!scene) return;
+    const updateFx = scene.updateFx;
+    // Plotly 3.3.1 restarts a 500 ms camera reorientation on every turntable
+    // redraw, even when the camera is already in that mode. Initialize once.
+    scene.updateFx = function (mode, hovermode) {
+      if (mode === 'turntable' && this.camera.mode === 'turntable') {
+        this.camera.keyBindingMode = 'rotate';
+        this.fullSceneLayout.hovermode = hovermode;
+        return;
+      }
+      return updateFx.call(this, mode, hovermode);
+    };
+    plot.addEventListener('click', event => {
+      if (event.target.closest('[data-attr="scene.dragmode"]')) {
+        // Save the live view before Plotly's built-in tool handler redraws it.
+        scene.saveLayout(plot.layout);
+        rememberLiveView();
+      }
+    }, true);
   }
   const controls = [ui.layer, ui.head, ui.mode, ui.time, ui.play, ui.scale, ui.grid, ui.reset];
   controls.forEach(control => { control.disabled = true; });
@@ -145,6 +174,7 @@
         autosize: true, paper_bgcolor: '#ffffff', plot_bgcolor: '#ffffff',
         margin: {l: 0, r: 12, t: 14, b: 0},
         font: {family: 'Arial, sans-serif', size: 13, color: '#404b5a'},
+        dragmode: plot.layout?.dragmode || 'zoom',
         uirevision: `measured-state-camera-${cameraRevision}`,
         scene: {
           // Keep the complete user view explicit on every frame, including zoom and pan.
@@ -153,7 +183,7 @@
           yaxis: {title: {text: 'Key channel'}, range: [0, K - 1], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           zaxis: {title: {text: signed ? 'Signed state' : '|State|'}, range: [lower, bound], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           aspectmode: 'manual', aspectratio: {x: 1, y: 1, z: 0.7},
-          dragmode: 'turntable', uirevision: `measured-state-camera-${cameraRevision}`,
+          dragmode, uirevision: `measured-state-camera-${cameraRevision}`,
         },
       },
     };
@@ -166,6 +196,11 @@
     try {
       do {
         pending = false;
+        if (resetRequested) {
+          camera = defaultCamera();
+          dragmode = plot.layout?.scene?.dragmode || dragmode;
+          resetRequested = false;
+        } else if (plot.data) rememberLiveView();
         const content = surface();
         const config = {responsive: true, displaylogo: false,
           scrollZoom: window.matchMedia('(pointer: fine)').matches,
@@ -175,6 +210,7 @@
         if (!plot.data) {
           plot.replaceChildren();
           await window.Plotly.newPlot(plot, content.data, content.layout, config);
+          stabilizeTurntable();
           plot.on('plotly_relayout', rememberCamera);
           plot.on('plotly_relayouting', rememberCamera);
         } else {
@@ -280,7 +316,7 @@
   [ui.layer, ui.head].forEach(control => control.addEventListener('change', loadPair));
   [ui.mode, ui.scale, ui.grid].forEach(control => control.addEventListener('change', render));
   ui.reset.addEventListener('click', () => {
-    camera = defaultCamera();
+    resetRequested = true;
     cameraRevision += 1;
     render();
   });

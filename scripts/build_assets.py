@@ -1,6 +1,6 @@
-"""Reproduce web figures from the actual per-token real-model trajectory and its 24 analysis checkpoints, never fixtures."""
+"""Reproduce web figures from the actual trajectory and original checkpoint diagnostics, never fixtures."""
 from pathlib import Path
-import argparse,csv,json,hashlib,shutil
+import argparse,csv,json,hashlib,shutil,subprocess,sys
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -78,14 +78,6 @@ for r in m:
  for k,v in checks.items():
   if not np.isclose(v,r[k],rtol=1e-8,atol=1e-9): raise AssertionError((r,k,v))
  audit.append({'tokens':r['tokens'],'layer':r['layer'],'head':r['head'],'metrics_recomputed_match':True})
-for key,name,title,ylabel,percent in [('E8','energy','Spectral concentration','Top-8 energy retained (%)',True),('max_over_rms','magnitude','Relative entry magnitude','max |S| / RMS(S)',False),('u1_ipr','left-ipr','Key-direction localization','IPR(u₁)',False),('v1_ipr','right-ipr','Value-direction localization','IPR(v₁)',False)]:
- fig,ax=plt.subplots(figsize=(7.5,4.15),layout='constrained')
- for l in layers:
-  series=sorted([r for r in m if r['head']==0 and r['layer']==l],key=lambda r:r['tokens']); yy=[r[key]*(100 if percent else 1) for r in series]
-  ax.plot(times,yy,'o-',color=colors[l],label=f'Layer {l}',lw=2,ms=6)
- ax.set(xlabel='Tokens processed',ylabel=ylabel,xticks=times,title=title);grid(ax);ax.legend(frameon=False,ncol=3,loc='best')
- if key.endswith('ipr'):ax.axhline(1/128,color='#b8c1cb',lw=1,ls='--',label='Uniform: 1/128')
- save(fig,'temporal-'+name)
 for precision in [4,8]:
  fig,axs=plt.subplots(1,3,figsize=(12.8,4.0),sharey=True,layout='constrained')
  for ax,l in zip(axs,layers):
@@ -102,9 +94,12 @@ for r in q:
  x=z[f"t{r['tokens']:05d}_l{r['layer']:02d}_h{r['head']:02d}"].astype(float);axis={'tensor':None,'row':1,'column':0}[r['grouping']];lo=x.min(axis=axis,keepdims=True);hi=x.max(axis=axis,keepdims=True);scale=(hi-lo)/(2**r['bits']-1);safe=np.where(scale==0,1,scale);rec=np.clip(np.rint((x-lo)/safe),0,2**r['bits']-1)*safe+lo;err=np.linalg.norm(rec-x)/(np.linalg.norm(x)+1e-12)
  assert np.isclose(err,r['relative_frobenius_error'],rtol=1e-8,atol=1e-9)
 # Provenance and data for browser. All axis IDs are explicit.
-payload={'schema_version':1,'state_files':state_files,'state_dtype':'float32','state_endianness':'little','state_shape':list(full_states.shape),'state_axes':['time','layer','head','key_channel','value_channel'],'checkpoint_tokens':times,'token_indices':trajectory['token_indices'].tolist(),'token_ids':trajectory['token_ids'].tolist(),'token_texts':trajectory['token_texts'].tolist(),'layer_ids':layers,'head_ids':heads,'snapshots':1536,'analysis_snapshots':24,'capture':'Every token recorded after processing: 256 actual time steps. SVD/quantization diagnostics use four checkpoints. No interpolation or synthetic frames.','metadata':meta,'summary_head0_t256':summ,'metrics':m,'quantization':q,'zero_point_diagnostic':zero_diag,'pair_max_abs':np.max(np.abs(full_states),axis=(0,3,4)).tolist(),'global_max_abs':float(np.abs(full_states).max())}
+payload={'schema_version':1,'state_files':state_files,'state_dtype':'float32','state_endianness':'little','state_shape':list(full_states.shape),'state_axes':['time','layer','head','key_channel','value_channel'],'checkpoint_tokens':times,'token_indices':trajectory['token_indices'].tolist(),'token_ids':trajectory['token_ids'].tolist(),'token_texts':trajectory['token_texts'].tolist(),'layer_ids':layers,'head_ids':heads,'snapshots':1536,'analysis_snapshots':24,'capture':'Every token recorded after processing: 256 actual time steps. Temporal SVD diagnostics use every token for head 0; original checkpoint and quantization diagnostics use four checkpoints. No synthetic frames.','temporal_diagnostics_file':'temporal_metrics.json','temporal_analysis_snapshots':768,'temporal_head_ids':[0],'metadata':meta,'summary_head0_t256':summ,'metrics':m,'quantization':q,'zero_point_diagnostic':zero_diag,'pair_max_abs':np.max(np.abs(full_states),axis=(0,3,4)).tolist(),'global_max_abs':float(np.abs(full_states).max())}
 (out/'experiment.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
 (out/'numeric_audit.json').write_text(json.dumps({'snapshot_count':1536,'analysis_snapshot_count':24,'analysis_checkpoints_equal_trajectory':True,'finite_fp32_shape_validated':True,'all24_metric_rows_match':True,'all144_quantization_rows_match':True,'source_sha256':{name:hashlib.sha256((src/name).read_bytes()).hexdigest() for name in ['recurrent_state_trajectory.npz','state_snapshots.npz','state_metrics.csv','static_quantization.csv','run_metadata.json']},'summary':summ,'zero_point_diagnostic':zero_diag,'checks':audit},indent=2))
 for name in ['state_snapshots.npz','state_metrics.csv','static_quantization.csv','run_metadata.json','validation_comparisons.csv','validation_report.json']:
  shutil.copy2(src/name,out/name)
+# Recompute temporal curves at every recorded token, after exporting their source assets.
+subprocess.run([sys.executable,str(root/'scripts'/'build_temporal_assets.py'),'--repo',str(root)],check=True)
+artifacts.extend(['temporal-energy','temporal-magnitude','temporal-left-ipr','temporal-right-ipr'])
 print(json.dumps({'summary':summ,'zero_point_diagnostic':zero_diag,'assets':artifacts,'binary_bytes':sum((out/name).stat().st_size for name in state_files.values())},indent=2))
