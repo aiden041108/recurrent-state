@@ -1,0 +1,221 @@
+{
+  "snapshot_count": 1536,
+  "analysis_snapshot_count": 24,
+  "analysis_checkpoints_equal_trajectory": true,
+  "finite_fp32_shape_validated": true,
+  "all24_metric_rows_match": true,
+  "all144_quantization_rows_match": true,
+  "source_sha256": {
+    "recurrent_state_trajectory.npz": "6cdf90dbc5ff51dded021efae8cb9aa73a912ecd5846da0268cd69a9fd7950bb",
+    "state_snapshots.npz": "4f00d873808970fde04ab919fcd6968ecce3ca4f8dc23ece9bd8bc3b3668ca06",
+    "state_metrics.csv": "d948a96c703292f83224205248187d904df64af7e996575100e5ffc2d6cba663",
+    "static_quantization.csv": "c599a99a8a1e5b2460923d9d501a4411e7ab817126a58b32419b8bbbb0a9217b",
+    "run_metadata.json": "4dbea8069c5b7398af473cf5f1cc9fea0c24514f98fcacbaa35104d52b883365"
+  },
+  "summary": [
+    {
+      "layer": 0,
+      "head": 0,
+      "tokens": 256,
+      "E1": 0.9973421925974603,
+      "E8": 1.0,
+      "r90": 1,
+      "row_peak_channel": 45,
+      "column_peak_channel": 56,
+      "row_peak_rms": 0.008739547853080513,
+      "column_peak_rms": 0.005753613022369117,
+      "max_over_rms": 50.446153087089506,
+      "u1_ipr": 0.35660208187213793,
+      "v1_ipr": 0.13991756073777636
+    },
+    {
+      "layer": 8,
+      "head": 0,
+      "tokens": 256,
+      "E1": 0.8617919362903468,
+      "E8": 0.9941568556819309,
+      "r90": 2,
+      "row_peak_channel": 39,
+      "column_peak_channel": 89,
+      "row_peak_rms": 0.05696835782197851,
+      "column_peak_rms": 0.1224414484498505,
+      "max_over_rms": 46.54538672248813,
+      "u1_ipr": 0.056202669928244284,
+      "v1_ipr": 0.7851710201605875
+    },
+    {
+      "layer": 16,
+      "head": 0,
+      "tokens": 256,
+      "E1": 0.7431614181482333,
+      "E8": 0.9500159544123568,
+      "r90": 5,
+      "row_peak_channel": 11,
+      "column_peak_channel": 73,
+      "row_peak_rms": 0.11412492526124648,
+      "column_peak_rms": 0.3595233792996874,
+      "max_over_rms": 23.32991336767155,
+      "u1_ipr": 0.020316154493644697,
+      "v1_ipr": 0.348093159969969
+    }
+  ],
+  "zero_point_diagnostic": {
+    "scope": "Additional offline diagnostic on the same L8/H0/t256 state; not a new model run",
+    "bits": 4,
+    "layer": 8,
+    "head": 0,
+    "tokens": 256,
+    "formula": "scale=(max-min)/(2^b-1); zp=clip(round(-min/scale),0,2^b-1); q=clip(round(S/scale)+zp,0,2^b-1); Shat=(q-zp)*scale",
+    "rounding": "NumPy round: ties to even",
+    "scale": 0.061387866735458374,
+    "zero_point": 6,
+    "relative_frobenius_error": 0.3447788743988395,
+    "original_relative_frobenius_error": 1.8894097901410187
+  },
+  "checks": [
+    {
+      "tokens": 64,
+      "layer": 0,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 64,
+      "layer": 0,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 64,
+      "layer": 8,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 64,
+      "layer": 8,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 64,
+      "layer": 16,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 64,
+      "layer": 16,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 128,
+      "layer": 0,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 128,
+      "layer": 0,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 128,
+      "layer": 8,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 128,
+      "layer": 8,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 128,
+      "layer": 16,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 128,
+      "layer": 16,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 192,
+      "layer": 0,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 192,
+      "layer": 0,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 192,
+      "layer": 8,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 192,
+      "layer": 8,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 192,
+      "layer": 16,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 192,
+      "layer": 16,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 256,
+      "layer": 0,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 256,
+      "layer": 0,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 256,
+      "layer": 8,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 256,
+      "layer": 8,
+      "head": 1,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 256,
+      "layer": 16,
+      "head": 0,
+      "metrics_recomputed_match": true
+    },
+    {
+      "tokens": 256,
+      "layer": 16,
+      "head": 1,
+      "metrics_recomputed_match": true
+    }
+  ]
+}

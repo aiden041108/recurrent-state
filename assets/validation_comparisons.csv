@@ -1,0 +1,235 @@
+method,token,layer,head,max_abs_error,rmse,relative_frobenius,rtol,atol,criterion,passed
+independent_one_token_replay,1,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,1,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,1,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,1,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,1,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,1,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,2,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,2,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,2,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,2,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,2,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,2,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,3,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,3,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,3,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,3,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,3,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,3,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,4,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,4,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,4,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,4,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,4,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,4,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,5,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,5,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,5,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,5,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,5,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,5,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,6,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,6,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,6,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,6,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,6,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,6,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,7,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,7,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,7,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,7,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,7,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,7,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,8,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,8,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,8,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,8,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,8,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,8,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,9,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,9,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,9,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,9,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,9,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,9,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,10,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,10,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,10,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,10,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,10,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,10,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,11,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,11,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,11,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,11,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,11,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,11,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,12,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,12,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,12,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,12,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,12,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,12,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,13,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,13,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,13,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,13,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,13,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,13,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,14,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,14,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,14,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,14,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,14,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,14,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,15,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,15,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,15,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,15,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,15,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,15,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,16,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,16,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,16,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,16,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,16,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,16,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,17,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,17,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,17,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,17,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,17,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,17,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,18,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,18,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,18,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,18,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,18,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,18,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,19,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,19,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,19,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,19,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,19,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,19,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,20,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,20,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,20,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,20,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,20,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,20,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,21,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,21,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,21,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,21,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,21,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,21,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,22,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,22,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,22,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,22,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,22,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,22,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,23,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,23,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,23,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,23,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,23,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,23,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,24,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,24,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,24,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,24,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,24,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,24,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,25,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,25,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,25,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,25,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,25,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,25,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,26,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,26,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,26,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,26,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,26,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,26,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,27,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,27,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,27,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,27,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,27,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,27,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,28,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,28,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,28,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,28,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,28,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,28,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,29,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,29,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,29,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,29,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,29,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,29,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,30,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,30,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,30,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,30,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,30,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,30,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,31,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,31,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,31,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,31,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,31,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,31,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,32,0,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,32,0,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,32,8,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,32,8,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,32,16,0,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+independent_one_token_replay,32,16,1,0.0,0.0,0.0,1e-05,1e-07,elementwise_allclose,True
+fresh_whole_prefix_vs_trajectory,1,0,0,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,1,0,1,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,1,8,0,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,1,8,1,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,1,16,0,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,1,16,1,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,8,0,0,2.767890691757202e-06,4.0249268241298595e-08,6.145144764763599e-05,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,8,0,1,4.096329212188721e-05,3.6931802906691886e-07,5.544644832651793e-05,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,8,8,0,0.0005099624395370483,1.1298267804413447e-05,0.0011305702468184223,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,8,8,1,0.00040334463119506836,1.0480948664878164e-05,0.0008361859473347198,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,8,16,0,0.0011909306049346924,4.0889625919193606e-05,0.0014049802742084334,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,8,16,1,0.0002793930470943451,9.631055439598988e-06,0.0009115503800677609,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,8,0,0,3.725290298461914e-09,5.116512160679578e-11,7.81168023182228e-08,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,8,0,1,4.470348358154297e-08,6.783840127423523e-10,1.0184791740241927e-07,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,8,8,0,0.00044842809438705444,1.0604235292907312e-05,0.0010610661988581472,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,8,8,1,0.0004337430000305176,8.981320083382496e-06,0.0007166804040262785,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,8,16,0,0.00036722421646118164,1.3725430851324688e-05,0.00047175009750026773,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,8,16,1,0.0003198161721229553,1.0309417109065041e-05,0.0009758384855918994,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,32,0,0,1.1065974831581116e-05,1.1551978157235773e-07,6.186767811783391e-05,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,32,0,1,5.811452865600586e-05,1.3139611064464215e-06,9.159367924698407e-05,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,32,8,0,0.0004849433898925781,1.4889261038283853e-05,0.0012474103021447467,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,32,8,1,0.0006687939167022705,1.7432149426328673e-05,0.0010873670487217021,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,32,16,0,0.0013657379895448685,4.6617136625933485e-05,0.0012287975021773414,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,32,16,1,0.0005235373973846436,1.9360745934949006e-05,0.001016527303610601,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,32,0,0,9.313225746154785e-10,1.1826469475015776e-11,6.333808443446414e-09,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,32,0,1,5.960464477539063e-08,1.6331248069035134e-09,1.13838372448014e-07,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,32,8,0,0.0008253902196884155,1.8671960562440516e-05,0.0015644426593168746,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,32,8,1,0.0004101395606994629,1.4854537541951708e-05,0.000926958078677818,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,32,16,0,0.001524895429611206,5.794353594766872e-05,0.001527598792408541,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,32,16,1,0.00042378902435302734,1.6309456968380554e-05,0.0008565605996542036,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,256,0,0,4.3655745685100555e-07,6.92198294959106e-09,6.847575394515477e-06,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,256,0,1,7.662177085876465e-05,1.4429681749906056e-06,5.987956911049426e-05,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,256,8,0,0.0008862316608428955,1.8764355288963558e-05,0.0015161443449144582,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,256,8,1,0.0006884634494781494,2.002392425357753e-05,0.000909883991872235,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,256,16,0,0.00154799222946167,5.3309608446436986e-05,0.0011121625626153576,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+fresh_whole_prefix_vs_trajectory,256,16,1,0.0005180686712265015,2.1542256170771158e-05,0.0011273923809539575,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,256,0,0,0.0,0.0,0.0,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,256,0,1,2.868473529815674e-06,3.575927213549503e-08,1.4839109761575258e-06,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,256,8,0,0.0005751550197601318,1.6647611743873272e-05,0.0013448854485330008,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,256,8,1,0.0005075335502624512,1.831242849607222e-05,0.0008319983268879085,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,256,16,0,0.001398921012878418,5.415746404279129e-05,0.0011297955963282997,0.01,1e-05,rmse <= atol + rtol * reference_rms,True
+segmented_prefix_vs_whole_prefix,256,16,1,0.00046910345554351807,1.9399434369338954e-05,0.0010155825717744842,0.01,1e-05,rmse <= atol + rtol * reference_rms,True

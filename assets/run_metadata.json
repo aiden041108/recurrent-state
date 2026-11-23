@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "experiment": "Actual per-token recurrent state trajectory",
+  "model_id": "Qwen/Qwen3.5-0.8B",
+  "model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "transformers_version": "5.24.0",
+  "torch_version": "2.14.1+cu130",
+  "python_version": "3.13.16",
+  "modeling_source_sha256": "c4d847b7e809ed2a49611e5afcea8bd0db39de597b67b57ce9753fb65f550de2",
+  "device": "cuda:0",
+  "gpu": "Tesla T4",
+  "weight_dtype": "torch.float16",
+  "native_state_dtype": "torch.float32",
+  "state_axes": [
+    "time",
+    "layer",
+    "head",
+    "key_channel",
+    "value_channel"
+  ],
+  "state_shape": [
+    256,
+    3,
+    2,
+    128,
+    128
+  ],
+  "cache_state_shape": [
+    1,
+    16,
+    128,
+    128
+  ],
+  "layers": [
+    0,
+    8,
+    16
+  ],
+  "heads": [
+    0,
+    1
+  ],
+  "tokens_processed": 256,
+  "forward_tokens_per_call": 1,
+  "sampling_stride": 1,
+  "token_semantics": "states[t-1] is the state AFTER processing token_ids[t-1], positions start at 1",
+  "text_sha256": "d6e8f67b26097d5424e7bbc76a21bdf2277d3bcb42a3d4673d7174442ebc8fd9",
+  "token_ids_sha256": "62a1aac53c298d6e33f67d6a8f697c9e22103f0405647fa9159c94e72e55ab66",
+  "elapsed_collection_seconds": 15.727869042000009,
+  "tokens_per_second_including_copy": 16.276839495317045,
+  "cpu_state_mib": 96.0,
+  "gpu_peak_allocated_gib": 1.624288558959961,
+  "gpu_peak_reserved_gib": 1.6328125,
+  "first_snapshot_immutable": true,
+  "validation_status": "passed",
+  "limitations": [
+    "FP16/BF16 weights and activations with native FP32 state, not an all-FP32 model.",
+    "Teacher-forced document tokens; no generation, no padding, no repeated text.",
+    "Single-token and chunked mixed-precision execution can differ numerically.",
+    "GPU memory includes weights/current cache/temporaries; CPU history is separate.",
+    "State probes and transfers are included in speed; not a model throughput benchmark."
+  ],
+  "validation": {
+    "schema_shape_finite": true,
+    "replay_passed": true,
+    "prefix_passed": true,
+    "status": "passed",
+    "replay_tokens": 32,
+    "prefix_tokens": [
+      1,
+      8,
+      32,
+      256
+    ],
+    "elapsed_seconds": 2.816678453999998,
+    "note": "Prefix tolerances are numerical smoke checks, not a proof of bitwise equivalence or model accuracy."
+  }
+}
