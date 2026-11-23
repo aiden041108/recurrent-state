@@ -7,4 +7,10 @@
 /* Keep navigation and interactive labels comfortably readable. */
 .section-nav a,.explorer-controls label,.explorer-controls select,.timeline output,.play-button{font-size:14px}
 .surface-status{font-size:13px}
+.explorer-footer{align-items:center;flex-wrap:wrap}
+.view-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.reset-view-button{padding:6px 11px;border:1px solid #d6deea;border-radius:6px;background:white;color:#283b58;font-size:12px;white-space:nowrap}
+.reset-view-button:hover{background:#edf2f8;border-color:#abbad0}
+.reset-view-button:disabled{opacity:.5;cursor:default}
+@media(max-width:600px){.explorer-footer{align-items:flex-start;gap:8px}.reset-view-button{min-height:36px}}
 @media(max-width:600px){.section-nav a,.explorer-controls label,.explorer-controls select,.timeline output,.play-button{font-size:14px}.surface-status{font-size:12px}}

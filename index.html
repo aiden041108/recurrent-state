@@ -9,8 +9,8 @@
 <meta content="Outliers, low-rank structure, and quantization in Qwen3.5-0.8B. An interactive experiment report." property="og:description"/>
 <meta content="#ffffff" name="theme-color"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="vendor/plotly.min.js"></script><script defer="" src="app.js"></script>
+<link href="style.css?v=20261124-camera" rel="stylesheet"/>
+<script defer="" src="vendor/plotly.min.js"></script><script defer="" src="app.js?v=20261124-camera"></script>
 </head>
 <body>
 <a class="skip-link" href="#overview">Skip to experiment</a>
@@ -82,7 +82,7 @@
 <div aria-label="Interactive 3D recurrent state surface" id="state-plot"><div class="plot-placeholder">The 3D surface will load when this section is in view.</div></div>
 <div class="timeline"><button class="play-button" id="surface-play" type="button">Play</button><label class="visually-hidden" for="surface-time">Token position</label><span class="timeline-end">1</span><input id="surface-time" max="255" min="0" step="1" type="range" value="255"/><span class="timeline-end">256</span><output for="surface-time" id="surface-time-label">Token 256 / 256</output></div>
 <p aria-live="polite" class="surface-status" id="surface-status" role="status">Loading selected state data…</p>
-<div class="explorer-footer"><span>Drag to rotate · Scroll or pinch to zoom</span><span>Forward-only playback · Stops at token 256</span></div>
+<div class="explorer-footer"><div class="view-controls"><span>Drag to rotate · Scroll or pinch to zoom</span><button aria-controls="state-plot" aria-label="Reset rotation and zoom to the initial view" class="reset-view-button" id="surface-reset" type="button">Reset view</button></div><span>Forward-only playback · Stops at token 256</span></div>
 </div>
 <div class="explorer-notes"><p><strong>Read the surface.</strong> X = value channel, Y = key channel. Z and color ranges stay fixed over time. Use the global scale to compare layers and heads.</p><p><strong>Real frames, forward only.</strong> Each pair loads on demand (~16 MiB). The slider updates while dragging; Play stops at token 256. Play at the end restarts from token 1. The faster grid changes display only.</p></div>
 </section>

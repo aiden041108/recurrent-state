@@ -51,7 +51,7 @@
     mode: byId('surface-mode'), time: byId('surface-time'),
     play: byId('surface-play'), label: byId('surface-time-label'),
     status: byId('surface-status'), scale: byId('surface-scale'),
-    grid: byId('surface-grid'),
+    grid: byId('surface-grid'), reset: byId('surface-reset'),
   };
   if (Object.values(ui).some(element => !element)) {
     if (ui.status) ui.status.textContent = 'Viewer controls are unavailable. The static plots below remain accessible.';
@@ -63,7 +63,16 @@
   let pairRequest = 0, pairAbort, loadedPair;
   let loading = false, ready = false, busy = false, pending = false;
   let playing = false, playbackId = 0;
-  const controls = [ui.layer, ui.head, ui.mode, ui.time, ui.play, ui.scale, ui.grid];
+  const defaultCamera = () => ({
+    eye: {x: 1.5, y: 1.5, z: 1.15}, center: {x: 0, y: 0, z: 0},
+    up: {x: 0, y: 0, z: 1}, projection: {type: 'perspective'},
+  });
+  let camera = defaultCamera(), cameraRevision = 0;
+  const copyCamera = value => JSON.parse(JSON.stringify(value));
+  function rememberCamera(event) {
+    if (event['scene.camera']) camera = copyCamera(event['scene.camera']);
+  }
+  const controls = [ui.layer, ui.head, ui.mode, ui.time, ui.play, ui.scale, ui.grid, ui.reset];
   controls.forEach(control => { control.disabled = true; });
   ui.status.setAttribute('role', 'status');
   ui.status.setAttribute('aria-live', 'polite');
@@ -136,13 +145,15 @@
         autosize: true, paper_bgcolor: '#ffffff', plot_bgcolor: '#ffffff',
         margin: {l: 0, r: 12, t: 14, b: 0},
         font: {family: 'Arial, sans-serif', size: 13, color: '#404b5a'},
-        uirevision: 'measured-state-camera',
+        uirevision: `measured-state-camera-${cameraRevision}`,
         scene: {
+          // Keep the complete user view explicit on every frame, including zoom and pan.
+          camera: copyCamera(camera),
           xaxis: {title: {text: 'Value channel'}, range: [0, V - 1], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           yaxis: {title: {text: 'Key channel'}, range: [0, K - 1], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           zaxis: {title: {text: signed ? 'Signed state' : '|State|'}, range: [lower, bound], autorange: false, backgroundcolor: '#fafbfc', gridcolor: '#e3e8ef'},
           aspectmode: 'manual', aspectratio: {x: 1, y: 1, z: 0.7},
-          dragmode: 'orbit', uirevision: 'measured-state-camera',
+          dragmode: 'orbit', uirevision: `measured-state-camera-${cameraRevision}`,
         },
       },
     };
@@ -158,12 +169,14 @@
         const content = surface();
         const config = {responsive: true, displaylogo: false,
           scrollZoom: window.matchMedia('(pointer: fine)').matches,
-          modeBarButtonsToRemove: ['toImage'],
+          modeBarButtonsToRemove: ['toImage', 'resetCameraDefault3d', 'resetCameraLastSave3d'],
+          doubleClick: false,
         };
         if (!plot.data) {
           plot.replaceChildren();
-          content.layout.scene.camera = {eye: {x: 1.5, y: 1.5, z: 1.15}};
           await window.Plotly.newPlot(plot, content.data, content.layout, config);
+          plot.on('plotly_relayout', rememberCamera);
+          plot.on('plotly_relayouting', rememberCamera);
         } else {
           await window.Plotly.react(plot, content.data, content.layout, config);
         }
@@ -266,6 +279,11 @@
 
   [ui.layer, ui.head].forEach(control => control.addEventListener('change', loadPair));
   [ui.mode, ui.scale, ui.grid].forEach(control => control.addEventListener('change', render));
+  ui.reset.addEventListener('click', () => {
+    camera = defaultCamera();
+    cameraRevision += 1;
+    render();
+  });
   let sliderFrame = 0;
   ui.time.addEventListener('input', () => {
     pause();
